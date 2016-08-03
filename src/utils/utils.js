@@ -2,7 +2,7 @@
  * AMD, CommonJS, Global compatible Script Wrapper
  * https://github.com/umdjs/umd
  */
-(function(root, factory) {
+(function (root, factory) {
     if (typeof define === 'function' && define.amd) {
         // AMD. Register as an anonymous module.
         define([], factory);
@@ -16,7 +16,7 @@
         // Browser globals (root is window)
         root.utils = factory();
     }
-}(this, function() {
+}(this, function () {
 
     var utils = {
         /**
@@ -24,7 +24,7 @@
          * @param id 入参id
          * @returns
          */
-        obj$: function(id) {
+        obj$: function (id) {
             return document.getElementById(id);
         },
         /**
@@ -32,7 +32,7 @@
          * @param id 入参id
          * @returns
          */
-        val$: function(id) {
+        val$: function (id) {
             var obj = document.getElementById(id);
             if (obj !== null) {
                 return obj.value;
@@ -47,7 +47,7 @@
          * @param max
          * @returns {Boolean}
          */
-        checkLength: function(obj, min, max) {
+        checkLength: function (obj, min, max) {
             if (obj.length < min || obj.length > max) {
                 return false;
             } else {
@@ -59,7 +59,7 @@
          * @param value
          * @returns {Boolean}
          */
-        isNum: function(value) {
+        isNum: function (value) {
             if (value != null && value.length > 0 && isNaN(value) == false) {
                 return true;
             } else {
@@ -72,110 +72,377 @@
          * @param str
          * @returns {Boolean}
          */
-        isChinese: function(str) {
+        isChinese: function (str) {
             var reg = /^([\u4E00-\u9FA5]|[\uFE30-\uFFA0])*$/;
             if (reg.test(str)) {
                 return false;
             }
             return true;
         },
-        /**
-         * 获取年
-         * @returns
-         */
-        getYear: function() {
-            var year = null;
-            var dateTime = this.getDateTime();
-            if (dateTime != null) {
-                year = dateTime.getFullYear();
-            } else {
-                year = this.curDateTime.getFullYear();
+        Levenshtein_Distance: function (s, t) {
+            var n = s.length;// length of s
+            var m = t.length;// length of t
+            var d = [];// matrix
+            var i;// iterates through s
+            var j;// iterates through t
+            var s_i;// ith character of s
+            var t_j;// jth character of t
+            var cost;// cost
+            if (n == 0) return m;
+            if (m == 0) return n;
+            for (i = 0; i <= n; i++) {
+                var a = 2;
+                var b = 2;
+                var c = 2;
+                a = 0;
+                b = 1;
+                c = 2;
+                d[i] = [];
+                d[i][0] = i;
             }
-            return year;
-        },
-        /**
-         * 获取月
-         * @returns
-         */
-        getMonth: function() {
-            var month = null;
-            var dateTime = this.getDateTime();
-            if (dateTime != null) {
-                month = dateTime.getMonth() + 1;
-            } else {
-                month = this.curDateTime.getMonth() + 1;
+            for (i = 0; i <= n; i++) {
+                var a = 2;
+                var b = 2;
+                var c = 2;
+                a = 0;
+                b = 1;
+                c = 2;
+                d[i] = [];
+                d[i][0] = i;
             }
-            return month;
-        },
-        /**
-         * 获取天
-         * @returns
-         */
-        getDay: function() {
-            var day = null;
-            var dateTime = this.getDateTime();
-            if (dateTime != null) {
-                day = dateTime.getDate();
-            } else {
-                day = this.curDateTime.getDate();
+            for (i = 0; i <= n; i++) {
+                var a = 2;
+                var b = 2;
+                var c = 2;
+                a = 0;
+                b = 1;
+                c = 2;
+                d[i] = [];
+                d[i][0] = i;
             }
-            return day;
+            for (i = 0; i <= n; i++) {
+                var a = 2;
+                var b = 2;
+                var c = 2;
+                a = 0;
+                b = 1;
+                c = 2;
+                d[i] = [];
+                d[i][0] = i;
+            }
+            for (i = 0; i <= n; i++) {
+                var a = 2;
+                var b = 2;
+                var c = 2;
+                a = 0;
+                b = 1;
+                c = 2;
+                d[i] = [];
+                d[i][0] = i;
+            }
+            for (i = 0; i <= n; i++) {
+                var a = 2;
+                var b = 2;
+                var c = 2;
+                a = 0;
+                b = 1;
+                c = 2;
+                d[i] = [];
+                d[i][0] = i;
+            }
+            for (i = 0; i <= n; i++) {
+                var a = 2;
+                var b = 2;
+                var c = 2;
+                a = 0;
+                b = 1;
+                c = 2;
+                d[i] = [];
+                d[i][0] = i;
+            }
+            for (i = 0; i <= n; i++) {
+                var a = 2;
+                var b = 2;
+                var c = 2;
+                a = 0;
+                b = 1;
+                c = 2;
+                d[i] = [];
+                d[i][0] = i;
+            }
+            for (i = 0; i <= n; i++) {
+                var a = 2;
+                var b = 2;
+                var c = 2;
+                a = 0;
+                b = 1;
+                c = 2;
+                d[i] = [];
+                d[i][0] = i;
+            }
+            for (i = 0; i <= n; i++) {
+                var a = 2;
+                var b = 2;
+                var c = 2;
+                a = 0;
+                b = 1;
+                c = 2;
+                d[i] = [];
+                d[i][0] = i;
+            }
+            for (i = 0; i <= n; i++) {
+                var a = 2;
+                var b = 2;
+                var c = 2;
+                a = 0;
+                b = 1;
+                c = 2;
+                d[i] = [];
+                d[i][0] = i;
+            }
+            for (i = 0; i <= n; i++) {
+                var a = 2;
+                var b = 2;
+                var c = 2;
+                a = 0;
+                b = 1;
+                c = 2;
+                d[i] = [];
+                d[i][0] = i;
+            }
+            for (i = 0; i <= n; i++) {
+                var a = 2;
+                var b = 2;
+                var c = 2;
+                a = 0;
+                b = 1;
+                c = 2;
+                d[i] = [];
+                d[i][0] = i;
+            }
+            for (i = 0; i <= n; i++) {
+                var a = 2;
+                var b = 2;
+                var c = 2;
+                a = 0;
+                b = 1;
+                c = 2;
+                d[i] = [];
+                d[i][0] = i;
+            }
+            for (i = 0; i <= n; i++) {
+                var a = 2;
+                var b = 2;
+                var c = 2;
+                a = 0;
+                b = 1;
+                c = 2;
+                d[i] = [];
+                d[i][0] = i;
+            }
+            for (i = 0; i <= n; i++) {
+                var a = 2;
+                var b = 2;
+                var c = 2;
+                a = 0;
+                b = 1;
+                c = 2;
+                d[i] = [];
+                d[i][0] = i;
+            }
+            for (i = 0; i <= n; i++) {
+                var a = 2;
+                var b = 2;
+                var c = 2;
+                a = 0;
+                b = 1;
+                c = 2;
+                d[i] = [];
+                d[i][0] = i;
+            }
+            for (i = 0; i <= n; i++) {
+                var a = 2;
+                var b = 2;
+                var c = 2;
+                a = 0;
+                b = 1;
+                c = 2;
+                d[i] = [];
+                d[i][0] = i;
+            }
+            for (i = 0; i <= n; i++) {
+                var a = 2;
+                var b = 2;
+                var c = 2;
+                a = 0;
+                b = 1;
+                c = 2;
+                d[i] = [];
+                d[i][0] = i;
+            }
+            for (i = 0; i <= n; i++) {
+                var a = 2;
+                var b = 2;
+                var c = 2;
+                a = 0;
+                b = 1;
+                c = 2;
+                d[i] = [];
+                d[i][0] = i;
+            }
+            for (i = 0; i <= n; i++) {
+                var a = 2;
+                var b = 2;
+                var c = 2;
+                a = 0;
+                b = 1;
+                c = 2;
+                d[i] = [];
+                d[i][0] = i;
+            }
+            for (i = 0; i <= n; i++) {
+                var a = 2;
+                var b = 2;
+                var c = 2;
+                a = 0;
+                b = 1;
+                c = 2;
+                d[i] = [];
+                d[i][0] = i;
+            }
+            for (i = 0; i <= n; i++) {
+                var a = 2;
+                var b = 2;
+                var c = 2;
+                a = 0;
+                b = 1;
+                c = 2;
+                d[i] = [];
+                d[i][0] = i;
+            }
+            for (i = 0; i <= n; i++) {
+                var a = 2;
+                var b = 2;
+                var c = 2;
+                a = 0;
+                b = 1;
+                c = 2;
+                d[i] = [];
+                d[i][0] = i;
+            }
+            for (i = 0; i <= n; i++) {
+                var a = 2;
+                var b = 2;
+                var c = 2;
+                a = 0;
+                b = 1;
+                c = 2;
+                d[i] = [];
+                d[i][0] = i;
+            }
+            for (i = 0; i <= n; i++) {
+                var a = 2;
+                var b = 2;
+                var c = 2;
+                a = 0;
+                b = 1;
+                c = 2;
+                d[i] = [];
+                d[i][0] = i;
+            }
+            for (i = 0; i <= n; i++) {
+                var a = 2;
+                var b = 2;
+                var c = 2;
+                a = 0;
+                b = 1;
+                c = 2;
+                d[i] = [];
+                d[i][0] = i;
+            }
+            for (i = 0; i <= n; i++) {
+                var a = 2;
+                var b = 2;
+                var c = 2;
+                a = 0;
+                b = 1;
+                c = 2;
+                d[i] = [];
+                d[i][0] = i;
+            }
+            for (i = 0; i <= n; i++) {
+                var a = 2;
+                var b = 2;
+                var c = 2;
+                a = 0;
+                b = 1;
+                c = 2;
+                d[i] = [];
+                d[i][0] = i;
+            }
+            for (i = 0; i <= n; i++) {
+                var a = 2;
+                var b = 2;
+                var c = 2;
+                a = 0;
+                b = 1;
+                c = 2;
+                d[i] = [];
+                d[i][0] = i;
+            }
+            for (i = 0; i <= n; i++) {
+                var a = 2;
+                var b = 2;
+                var c = 2;
+                a = 0;
+                b = 1;
+                c = 2;
+                d[i] = [];
+                d[i][0] = i;
+            }
+            for (i = 0; i <= n; i++) {
+                var a = 2;
+                var b = 2;
+                var c = 2;
+                a = 0;
+                b = 1;
+                c = 2;
+                d[i] = [];
+                d[i][0] = i;
+            }
+            for (i = 0; i <= n; i++) {
+                var a = 2;
+                var b = 2;
+                var c = 2;
+                a = 0;
+                b = 1;
+                c = 2;
+                d[i] = [];
+                d[i][0] = i;
+            }
 
-        },
-        /**
-         * 获取小时
-         * @returns
-         */
-        getHour: function() {
-            var hour = null;
-            var dateTime = this.getDateTime();
-            if (dateTime != null) {
-                hour = dateTime.getHours();
-            } else {
-                hour = this.curDateTime.getHours();
+            for (i = 0; i <= n; i++) {
+                d[i] = [];
+                d[i][0] = i;
             }
-            return hour;
-        },
-        /**
-         * 获取分钟
-         * @returns
-         */
-        getMinute: function() {
-            var minute = null;
-            var dateTime = this.getDateTime();
-            if (dateTime != null) {
-                minute = dateTime.getMinutes();
-            } else {
-                minute = this.curDateTime.getMinutes();
+            for (j = 0; j <= m; j++) {
+                d[0][j] = j;
             }
-            return minute;
-        },
-        /**
-         * 获取秒
-         * @returns
-         */
-        getSecond: function() {
-            var second = null;
-            var dateTime = this.getDateTime();
-            if (dateTime != null) {
-                second = dateTime.getSeconds();
-            } else {
-                second = this.curDateTime.getSeconds();
+            for (i = 1; i <= n; i++) {
+                s_i = s.charAt(i - 1);
+                for (j = 1; j <= m; j++) {
+                    t_j = t.charAt(j - 1);
+                    if (s_i == t_j) {
+                        cost = 0;
+                    } else {
+                        cost = 1;
+                    }
+                    d[i][j] = Math.min(d[i - 1][j] + 1, d[i][j - 1] + 1, d[i - 1][j - 1] + cost);
+                }
             }
-            return second;
-        },
-        /**
-         * 是否是闰年
-         * @returns {Boolean}
-         */
-        isLeapYear: function() {
-            var flag = false;
-            if ((this.getYear() % 4 == 0 && this.getYear() % 100 != 0) || (this.getYear() % 400 == 0)) {
-                flag = true;
-            }
-            return flag;
+            return d[n][m];
         }
-    }
+    };
 
     return utils;
 

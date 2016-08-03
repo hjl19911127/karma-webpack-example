@@ -46,5 +46,8 @@ describe("utils", function () {
     it("Test function isChinese false", function () {
         expect(utils.isChinese('哈哈')).to.be.false;
     });
+    it("Test function Levenshtein_Distance true", function () {
+        expect(utils.Levenshtein_Distance('a', 'ab')).to.equal(1);
+    });
 
 });
