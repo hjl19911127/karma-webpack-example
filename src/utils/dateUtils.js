@@ -14,76 +14,16 @@
         module.exports = factory();
     } else {
         // Browser globals (root is window)
-        root.utils = factory();
+        root.dateUtils = factory();
     }
 }(this, function() {
 
-    var utils = {
-        /**
-         * 根据传入id获取js对象
-         * @param id 入参id
-         * @returns
-         */
-        obj$: function(id) {
-            return document.getElementById(id);
-        },
-        /**
-         * 根据传入id获取js对象的值
-         * @param id 入参id
-         * @returns
-         */
-        val$: function(id) {
-            var obj = document.getElementById(id);
-            if (obj !== null) {
-                return obj.value;
-            } else {
-                return null;
-            }
-        },
-        /**
-         * 判断js对象的长度
-         * @param obj
-         * @param min
-         * @param max
-         * @returns {Boolean}
-         */
-        checkLength: function(obj, min, max) {
-            if (obj.length < min || obj.length > max) {
-                return false;
-            } else {
-                return true;
-            }
-        },
-        /**
-         * 判断是否是数字
-         * @param value
-         * @returns {Boolean}
-         */
-        isNum: function(value) {
-            if (value != null && value.length > 0 && isNaN(value) == false) {
-                return true;
-            } else {
-                return false;
-            }
-
-        },
-        /**
-         * 判断是否是中文
-         * @param str
-         * @returns {Boolean}
-         */
-        isChinese: function(str) {
-            var reg = /^([\u4E00-\u9FA5]|[\uFE30-\uFFA0])*$/;
-            if (reg.test(str)) {
-                return false;
-            }
-            return true;
-        },
+    var dateUtils = {
         /**
          * 获取年
          * @returns
          */
-        getYear: function() {
+        getYear: function(date) {
             var year = null;
             var dateTime = this.getDateTime();
             if (dateTime != null) {
@@ -175,8 +115,8 @@
             }
             return flag;
         }
-    }
+    };
 
-    return utils;
+    return dateUtils;
 
 }));
