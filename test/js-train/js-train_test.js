@@ -1,7 +1,7 @@
 var chai = require('../../node_modules/chai/chai');
 var expect = chai.expect;
 
-var utils = require('../../src/string/stringUtils');
+var utils = require('../../src/js-train/js-train');
 
 describe("stringUtils", function () {
     it("Test function trimAll", function () {

@@ -1,7 +1,7 @@
 var chai = require('../../node_modules/chai/chai');
 var expect = chai.expect;
 
-var utils = require('../../src/utils/utils');
+var utils = require('../../src/js-opencourse/js-opencourse');
 
 describe("utils", function () {
     it("Test function obj$", function () {

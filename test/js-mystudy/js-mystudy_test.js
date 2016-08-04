@@ -1,7 +1,7 @@
 var chai = require('../../node_modules/chai/chai');
 var expect = chai.expect;
 
-var hexColorLuminance = require('../../src/hexcolor/hexColorLuminance');
+var hexColorLuminance = require('../../src/js-mystudy/js-mystudy');
 
 describe("hexColorLuminance", function () {
     it("should return a luminanced color", function () {
